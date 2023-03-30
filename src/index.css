@@ -11,3 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+img {
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+body {
+  margin-top: 80px !important;
+}
+
+.hoverCard {
+  display: block;
+  width: max-content !important;
+  height: max-content !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.hoverCard::before {
+  position: absolute;
+  content: " ";
+  inset: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(2, 0, 36, 0) 100%);
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  z-index: 1;
+  transition: .3s;
+}
+
+.hoverCard::after {
+  position: absolute;
+  bottom: -200px;
+  z-index: 2;
+  color: white;
+  background-color: var(--bs-primary);
+  padding: 5px 15px;
+  border-radius: 30px;
+  content: "Tonton";
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: .5s;
+}
+
+.hoverCard:hover::before {
+  opacity: 80%;
+}
+
+.hoverCard:hover::after {
+  bottom: 20px;
+}
+
+.rating  i{
+  cursor: pointer;
+}
